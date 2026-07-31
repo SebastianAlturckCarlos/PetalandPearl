@@ -191,7 +191,9 @@ img {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 4px;
+    padding: 8px;
+    z-index: 1100;
+    position: relative;
 }
 
 .nav-toggle span {
@@ -199,6 +201,7 @@ img {
     height: 2px;
     background-color: var(--deep-brown);
     transition: all 0.3s ease;
+    display: block;
 }
 
 .nav-toggle.active span:nth-child(1) {
@@ -211,6 +214,29 @@ img {
 
 .nav-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Nav Overlay */
+.nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1040;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.nav-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+@media (max-width: 640px) {
+    .nav-overlay {
+        display: block;
+    }
 }
 
 /* =============================================
@@ -953,6 +979,7 @@ img {
         gap: 28px;
         transition: right 0.3s ease;
         box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+        z-index: 1050;
     }
 
     .nav-menu.active {

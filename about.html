@@ -80,6 +80,9 @@
         </div>
     </footer>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="nav-overlay"></div>
+
     <!-- Floating Book Now Button -->
     <a href="mailto:petalandpearlflowerskc@gmail.com?subject=Booking%20Inquiry%20-%20Petal%20and%20Pearl%20Flowers" class="floating-cta visible" aria-label="Book now via email">
         <i class="fa-solid fa-envelope"></i>
@@ -92,15 +95,24 @@
 
         const navToggle = document.querySelector('.nav-toggle');
         const navMenu = document.querySelector('.nav-menu');
+        const navOverlay = document.querySelector('.nav-overlay');
+
+        function closeMenu() {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            navOverlay.classList.remove('active');
+        }
+
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             navToggle.classList.toggle('active');
+            navOverlay.classList.toggle('active');
         });
+
+        navOverlay.addEventListener('click', closeMenu);
+
         document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
-            });
+            link.addEventListener('click', closeMenu);
         });
     </script>
 
