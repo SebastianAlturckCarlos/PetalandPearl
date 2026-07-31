@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Petal and Pearl Flowers</title>
+    <meta name="description" content="Get in touch with Petal and Pearl Flowers. Book a consultation, order an arrangement, or plan a floral party.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Petal &amp; Pearl</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li class="nav-cta">
+                    <a href="mailto:petalandpearlflowerskc@gmail.com?subject=Booking%20Inquiry%20-%20Petal%20and%20Pearl%20Flowers" class="btn btn-nav">
+                        <i class="fa-solid fa-envelope"></i> Book Now
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <span class="section-label" data-aos="fade-up">Get in Touch</span>
+            <h1 data-aos="fade-up" data-aos-delay="100">Let's Create Something Beautiful</h1>
+            <div class="divider" data-aos="fade-up" data-aos-delay="200"></div>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="section contact">
+        <div class="container">
+            <div class="contact-content" data-aos="fade-up">
+                <div class="contact-info">
+                    <p>Whether you have a question about an arrangement, want to book a wedding consultation, or are planning a floral party &mdash; I'd love to hear from you! Reach out and I'll get back to you as soon as I can.</p>
+
+                    <a href="mailto:petalandpearlflowerskc@gmail.com?subject=Booking%20Inquiry%20-%20Petal%20and%20Pearl%20Flowers" class="btn btn-primary btn-lg">
+                        <i class="fa-solid fa-envelope"></i> Email Me to Book
+                    </a>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <h4><i class="fa-solid fa-envelope"></i> Email</h4>
+                            <a href="mailto:petalandpearlflowerskc@gmail.com">petalandpearlflowerskc@gmail.com</a>
+                        </div>
+                        <div class="contact-method">
+                            <h4><i class="fa-solid fa-location-dot"></i> Service Areas</h4>
+                            <p>Manhattan, KS &amp; Spring Hill, KS</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <h4>Follow Along</h4>
+                        <ul>
+                            <li>
+                                <a href="https://www.instagram.com/petalandpearlflowerskc" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-instagram"></i>
+                                    @petalandpearlflowerskc
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/petalandpearlflowerskc" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-facebook"></i>
+                                    @petalandpearlflowerskc
+                                </a>
+                            </li>
+                            <li>
+                                <span class="social-nolink">
+                                    <i class="fa-brands fa-tiktok"></i>
+                                    @petal.and.pearl.kc
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-brand">Petal &amp; Pearl Flowers</p>
+                <p class="footer-copy">&copy; 2026 Petal and Pearl Flowers. All rights reserved.</p>
+                <p class="footer-location">Manhattan, KS &amp; Spring Hill, KS</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic', offset: 50 });
+
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+</html>

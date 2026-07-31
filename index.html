@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petal and Pearl Flowers | Manhattan & Spring Hill, KS</title>
+    <meta name="description" content="Boutique floral design by Hannah King. Custom arrangements, wedding florals, and floral instruction in Manhattan and Spring Hill, Kansas.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Petal &amp; Pearl</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-cta">
+                    <a href="mailto:petalandpearlflowerskc@gmail.com?subject=Booking%20Inquiry%20-%20Petal%20and%20Pearl%20Flowers" class="btn btn-nav">
+                        <i class="fa-solid fa-envelope"></i> Book Now
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <img src="B84F363A-EB60-4B69-8A0B-DC132020A2B7.PNG" alt="Petal and Pearl Flowers logo - cowboy boot with wildflowers and pearls" class="hero-logo" data-aos="fade-up" data-aos-duration="1000">
+            <p class="hero-tagline" data-aos="fade-up" data-aos-delay="200">Capturing special moments through florals<br>that remind us to live in the present.</p>
+            <p class="hero-location" data-aos="fade-up" data-aos-delay="400">Serving Manhattan, KS &amp; Spring Hill, KS</p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
+                <a href="mailto:petalandpearlflowerskc@gmail.com?subject=Booking%20Inquiry%20-%20Petal%20and%20Pearl%20Flowers" class="btn btn-primary">
+                    <i class="fa-solid fa-envelope"></i> Book Now
+                </a>
+                <a href="services.html" class="btn btn-outline">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome / Service Teaser -->
+    <section class="section home-intro">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Welcome</span>
+                <h2>Flowers for Every Moment</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle">From a joyful everyday bouquet to the wedding of your dreams, I design with heart, intention, and the beauty of each season.</p>
+            </div>
+
+            <div class="services-preview">
+                <a href="services.html#custom" class="preview-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="preview-icon"><i class="fa-solid fa-seedling"></i></div>
+                    <h3>Custom Arrangements</h3>
+                    <p>Hand-crafted bouquets and arrangements for any occasion, made to order.</p>
+                    <span class="preview-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="services.html#weddings" class="preview-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="preview-icon"><i class="fa-solid fa-ring"></i></div>
+                    <h3>Weddings</h3>
+                    <p>Romantic, cohesive florals designed around your vision and love story.</p>
+                    <span class="preview-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="services.html#parties" class="preview-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="preview-icon"><i class="fa-solid fa-champagne-glasses"></i></div>
+                    <h3>Floral Parties</h3>
+                    <p>Hands-on workshops for showers, birthdays, girls' nights, and more.</p>
+                    <span class="preview-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-brand">Petal &amp; Pearl Flowers</p>
+                <p class="footer-copy">&copy; 2026 Petal and Pearl Flowers. All rights reserved.</p>
+                <p class="footer-location">Manhattan, KS &amp; Spring Hill, KS</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Book Now Button -->
+    <a href="mailto:petalandpearlflowerskc@gmail.com?subject=Booking%20Inquiry%20-%20Petal%20and%20Pearl%20Flowers" class="floating-cta" aria-label="Book now via email">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Book Now</span>
+    </a>
+
+    <script src="assets/js/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic', offset: 50 });
+
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+            const floatingCta = document.querySelector('.floating-cta');
+            floatingCta.classList.toggle('visible', window.scrollY > 600);
+        });
+    </script>
+
+</body>
+</html>
