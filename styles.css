@@ -109,9 +109,11 @@ img {
     align-items: center;
 }
 
-.nav-logo-img {
+.nav-container .nav-logo .nav-logo-img {
     height: 48px;
     width: auto;
+    max-height: 48px;
+    object-fit: contain;
 }
 
 .nav-menu {
