@@ -107,6 +107,12 @@ img {
 .nav-logo {
     display: flex;
     align-items: center;
+    gap: 10px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--deep-brown);
+    letter-spacing: 0.5px;
 }
 
 .nav-container .nav-logo .nav-logo-img {
