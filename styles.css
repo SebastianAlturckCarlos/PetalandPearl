@@ -105,11 +105,13 @@ img {
 }
 
 .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: var(--deep-brown);
-    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo-img {
+    height: 48px;
+    width: auto;
 }
 
 .nav-menu {
