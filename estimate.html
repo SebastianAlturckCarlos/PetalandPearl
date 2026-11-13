@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Flower Estimate | Petal and Pearl Flowers</title>
+    <meta name="description" content="Build your wedding flower wish list and get an instant price range for bouquets, boutonnieres, centerpieces, and more from Petal and Pearl Flowers.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/estimate.css">
+</head>
+<body class="estimate-page">
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><img src="logo-boot.png" alt="Petal and Pearl" class="nav-logo-img"> Petal &amp; Pearl</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="estimate.html" class="active">Estimate</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-cta">
+                    <a href="mailto:petalandpearlflowerskc@gmail.com?subject=Booking%20Inquiry%20-%20Petal%20and%20Pearl%20Flowers" class="btn btn-nav">
+                        <i class="fa-solid fa-envelope"></i> Book Now
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <span class="section-label" data-aos="fade-up">Wedding Flowers</span>
+            <h1 data-aos="fade-up" data-aos-delay="100">Build Your Estimate</h1>
+            <div class="divider" data-aos="fade-up" data-aos-delay="200"></div>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="300">Pick the flowers you're dreaming of and see a price range instantly. When it feels right, send it my way and we'll turn it into your real proposal.</p>
+        </div>
+    </section>
+
+    <section class="section estimator">
+        <div class="container estimator-layout">
+
+            <!-- ===== Builder ===== -->
+            <div class="estimator-builder">
+
+                <!-- Step 1: Packages -->
+                <div class="est-step">
+                    <div class="est-step-head">
+                        <span class="est-step-num">1</span>
+                        <div>
+                            <h2>Start with a look</h2>
+                            <p>Choose a starting point, then make it yours. Or skip ahead and build from scratch.</p>
+                        </div>
+                    </div>
+                    <div class="package-grid" id="package-grid"><!-- filled by script --></div>
+                </div>
+
+                <!-- Step 2: Party size helper -->
+                <div class="est-step">
+                    <div class="est-step-head">
+                        <span class="est-step-num">2</span>
+                        <div>
+                            <h2>Tell me about your crew</h2>
+                            <p>I'll suggest how many bouquets, boutonnieres, corsages, and centerpieces you'll likely need.</p>
+                        </div>
+                    </div>
+                    <div class="helper-card">
+                        <div class="helper-fields">
+                            <label class="helper-field">
+                                <span>Guests</span>
+                                <input type="number" id="h-guests" min="0" max="1000" inputmode="numeric" placeholder="e.g. 120">
+                            </label>
+                            <label class="helper-field">
+                                <span>Bridesmaids</span>
+                                <input type="number" id="h-bridesmaids" min="0" max="30" inputmode="numeric" placeholder="e.g. 5">
+                            </label>
+                            <label class="helper-field">
+                                <span>Groomsmen</span>
+                                <input type="number" id="h-groomsmen" min="0" max="30" inputmode="numeric" placeholder="e.g. 5">
+                            </label>
+                            <label class="helper-field">
+                                <span>Moms &amp; Grandmas</span>
+                                <input type="number" id="h-family" min="0" max="30" inputmode="numeric" placeholder="e.g. 4">
+                            </label>
+                        </div>
+                        <div class="helper-foot">
+                            <p class="helper-hint" id="helper-hint">Centerpieces assume about 8 guests per table. Boutonnieres include the groom and both dads.</p>
+                            <button type="button" class="btn btn-outline btn-helper" id="helper-apply">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i> Suggest Quantities
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Items -->
+                <div class="est-step">
+                    <div class="est-step-head">
+                        <span class="est-step-num">3</span>
+                        <div>
+                            <h2>Fine-tune your flowers</h2>
+                            <p>Adjust any quantity. Prices are per piece and vary with flower choice, size, and season.</p>
+                        </div>
+                    </div>
+                    <div id="category-list"><!-- filled by script --></div>
+                </div>
+            </div>
+
+            <!-- ===== Summary ===== -->
+            <aside class="estimator-summary" id="summary" aria-live="polite">
+                <div class="summary-card">
+                    <span class="section-label">Your Estimate</span>
+                    <div class="summary-total">
+                        <span id="total-low">$0</span>
+                        <span class="summary-dash">&ndash;</span>
+                        <span id="total-high">$0</span>
+                    </div>
+                    <p class="summary-count" id="summary-count">Add a few flowers to see your range.</p>
+
+                    <div class="range-viz" aria-hidden="true">
+                        <div class="range-track">
+                            <div class="range-fill" id="range-fill"></div>
+                        </div>
+                        <div class="range-labels">
+                            <span>Simpler blooms</span>
+                            <span>Premium blooms</span>
+                        </div>
+                    </div>
+
+                    <ul class="summary-lines" id="summary-lines"></ul>
+                    <p class="summary-min-note" id="summary-min-note" hidden></p>
+
+                    <div class="summary-details">
+                        <label>
+                            <span>Your name</span>
+                            <input type="text" id="d-name" autocomplete="name" placeholder="First &amp; last name">
+                        </label>
+                        <label>
+                            <span>Wedding date</span>
+                            <input type="date" id="d-date">
+                        </label>
+                        <label>
+                            <span>Venue / city</span>
+                            <input type="text" id="d-venue" placeholder="Optional">
+                        </label>
+                        <label>
+                            <span>Colors &amp; vibe</span>
+                            <textarea id="d-notes" rows="2" placeholder="Blush &amp; sage, garden-style, lots of eucalyptus..."></textarea>
+                        </label>
+                    </div>
+
+                    <a href="#" class="btn btn-primary btn-card" id="send-estimate">
+                        <i class="fa-solid fa-paper-plane"></i> Send to Hannah
+                    </a>
+                    <div class="summary-tools">
+                        <button type="button" id="copy-estimate"><i class="fa-solid fa-copy"></i> <span>Copy</span></button>
+                        <button type="button" id="share-estimate"><i class="fa-solid fa-link"></i> <span>Share Link</span></button>
+                        <button type="button" id="print-estimate"><i class="fa-solid fa-print"></i> <span>Print</span></button>
+                        <button type="button" id="reset-estimate"><i class="fa-solid fa-rotate-left"></i> <span>Start Over</span></button>
+                    </div>
+
+                    <p class="summary-disclaimer">This is a ballpark range, not a quote. Final pricing depends on your flower choices, season, delivery, and setup, and is confirmed after your free consultation.</p>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Mobile sticky total bar -->
+    <a href="#summary" class="mobile-total-bar" id="mobile-total-bar" aria-label="Jump to your estimate summary">
+        <span class="mtb-label">Your Estimate</span>
+        <span class="mtb-total" id="mobile-total">$0 &ndash; $0</span>
+        <span class="mtb-cta">Review <i class="fa-solid fa-chevron-up"></i></span>
+    </a>
+
+    <!-- Toast -->
+    <div class="est-toast" id="est-toast" role="status" aria-live="polite"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-brand">Petal &amp; Pearl Flowers</p>
+                <p class="footer-copy">&copy; 2026 Petal and Pearl Flowers. All rights reserved.</p>
+                <p class="footer-location">Manhattan, KS &amp; Spring Hill, KS</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="nav-overlay"></div>
+
+    <script src="assets/js/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic', offset: 50 });
+
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const navOverlay = document.querySelector('.nav-overlay');
+
+        function closeMenu() {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            navOverlay.classList.remove('active');
+        }
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+        });
+
+        navOverlay.addEventListener('click', closeMenu);
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    </script>
+    <script src="assets/js/estimate-pricing.js"></script>
+    <script src="assets/js/estimate.js"></script>
+
+</body>
+</html>

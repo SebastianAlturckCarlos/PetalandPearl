@@ -1,0 +1,825 @@
+/* =============================================
+   WEDDING ESTIMATE PAGE
+   Uses the palette variables from styles.css
+   ============================================= */
+
+.page-header .section-subtitle {
+    margin-top: 24px;
+}
+
+.estimator {
+    background-color: var(--ivory);
+    padding-top: 72px;
+}
+
+.estimator-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 48px;
+    align-items: start;
+}
+
+/* ---------- Steps ---------- */
+.est-step {
+    margin-bottom: 56px;
+}
+
+.est-step-head {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.est-step-num {
+    flex: 0 0 auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--warm-taupe);
+    color: var(--warm-taupe);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.est-step-head h2 {
+    font-size: 2rem;
+    color: var(--deep-brown);
+    margin-bottom: 4px;
+}
+
+.est-step-head p {
+    color: var(--text-medium);
+    font-size: 0.9rem;
+}
+
+/* ---------- Packages ---------- */
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.package-card {
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    background-color: var(--soft-cream);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    padding: 22px 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    position: relative;
+    color: var(--text-dark);
+}
+
+.package-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(107, 78, 61, 0.1);
+    border-color: var(--warm-taupe);
+}
+
+.package-card:focus-visible,
+.step-btn:focus-visible,
+.summary-tools button:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+}
+
+.package-card.active {
+    border-color: var(--warm-taupe);
+    background-color: var(--ivory);
+    box-shadow: inset 0 0 0 1px var(--warm-taupe);
+}
+
+.package-card.active::after {
+    content: '\2713';
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: var(--warm-taupe);
+    color: var(--ivory);
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.package-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    color: var(--deep-brown);
+    font-weight: 500;
+    line-height: 1.2;
+    padding-right: 24px;
+}
+
+.package-tagline {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.package-range {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--warm-taupe);
+}
+
+.package-count {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-light);
+}
+
+/* ---------- Helper ---------- */
+.helper-card {
+    background-color: var(--soft-cream);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    padding: 24px;
+}
+
+.helper-fields {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.helper-field span,
+.summary-details label span {
+    display: block;
+    font-size: 0.68rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-medium);
+    margin-bottom: 6px;
+}
+
+.helper-field input,
+.summary-details input,
+.summary-details textarea {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    background-color: var(--ivory);
+    border: 1px solid var(--border-light);
+    border-radius: 3px;
+    padding: 10px 12px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.helper-field input:focus,
+.summary-details input:focus,
+.summary-details textarea:focus,
+.step-input:focus {
+    outline: none;
+    border-color: var(--warm-taupe);
+    box-shadow: 0 0 0 3px rgba(139, 111, 94, 0.12);
+}
+
+.helper-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 18px;
+}
+
+.helper-hint {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.btn-helper {
+    flex: 0 0 auto;
+    padding: 12px 22px;
+    font-size: 0.7rem;
+    background-color: var(--ivory);
+}
+
+/* ---------- Categories & items ---------- */
+.est-category {
+    margin-bottom: 36px;
+}
+
+.est-category-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 12px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.est-category-head > i {
+    color: var(--warm-taupe);
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+
+.est-category-head > div {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.est-category-head h3 {
+    font-size: 1.5rem;
+    color: var(--deep-brown);
+    line-height: 1.1;
+}
+
+.est-category-head p {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.est-category-sub {
+    margin-left: auto;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--warm-taupe);
+    white-space: nowrap;
+}
+
+.est-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 14px;
+    border-radius: 4px;
+    border-left: 2px solid transparent;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.est-item + .est-item {
+    border-top: 1px dashed var(--border-light);
+}
+
+.est-item.selected {
+    background-color: var(--soft-cream);
+    border-left-color: var(--blush-pink);
+}
+
+.est-item.bump .est-item-sub {
+    animation: est-bump 0.35s ease;
+}
+
+@keyframes est-bump {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.08); color: var(--deep-brown); }
+    100% { transform: scale(1); }
+}
+
+.est-item-info h4 {
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.est-item-desc {
+    font-size: 0.8rem;
+    color: var(--text-medium);
+    margin: 2px 0 4px;
+    line-height: 1.5;
+}
+
+.est-item-price {
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--sage-green);
+    font-weight: 500;
+}
+
+.est-item-controls {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    min-width: 132px;
+}
+
+.stepper {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--border-light);
+    border-radius: 40px;
+    background-color: var(--ivory);
+    overflow: hidden;
+}
+
+.est-item.selected .stepper {
+    border-color: var(--warm-taupe);
+}
+
+.step-btn {
+    width: 38px;
+    height: 38px;
+    border: none;
+    background: none;
+    color: var(--warm-taupe);
+    cursor: pointer;
+    font-size: 0.75rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.step-btn:hover:not(:disabled) {
+    background-color: var(--warm-taupe);
+    color: var(--ivory);
+}
+
+.step-btn:disabled {
+    color: var(--border-light);
+    cursor: default;
+}
+
+.step-input {
+    width: 44px;
+    height: 38px;
+    border: none;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    background: transparent;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.step-input::-webkit-outer-spin-button,
+.step-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.est-item-sub {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--warm-taupe);
+    min-height: 1.2em;
+    display: inline-block;
+}
+
+/* ---------- Summary ---------- */
+.estimator-summary {
+    position: sticky;
+    top: 96px;
+    scroll-margin-top: 96px;
+}
+
+.summary-card {
+    background-color: var(--soft-cream);
+    border: 1px solid var(--warm-taupe);
+    border-radius: 4px;
+    padding: 32px 28px 28px;
+    text-align: center;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+}
+
+.summary-total {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    color: var(--deep-brown);
+    line-height: 1.1;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0 10px;
+}
+
+.summary-dash {
+    color: var(--text-light);
+    font-weight: 300;
+}
+
+.summary-count {
+    font-size: 0.8rem;
+    color: var(--text-medium);
+    margin-top: 8px;
+}
+
+.range-viz {
+    margin: 20px 0 18px;
+}
+
+.range-track {
+    height: 8px;
+    border-radius: 8px;
+    background-color: var(--border-light);
+    overflow: hidden;
+}
+
+.range-fill {
+    --low-pct: 0%;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg,
+        var(--sage-green) 0,
+        var(--sage-green) var(--low-pct),
+        var(--blush-pink) var(--low-pct),
+        var(--muted-lavender) 100%);
+    transition: width 0.5s ease;
+}
+
+.range-fill.has-value {
+    width: 100%;
+}
+
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.62rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-top: 6px;
+}
+
+.summary-lines {
+    list-style: none;
+    text-align: left;
+    border-top: 1px solid var(--border-light);
+    margin-bottom: 8px;
+}
+
+.summary-lines li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 0.8rem;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-light);
+    animation: est-line-in 0.3s ease;
+}
+
+@keyframes est-line-in {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: none; }
+}
+
+.line-name {
+    color: var(--text-dark);
+}
+
+.line-amt {
+    color: var(--warm-taupe);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.summary-min-note {
+    font-size: 0.78rem;
+    color: var(--deep-brown);
+    background-color: rgba(212, 165, 165, 0.18);
+    border-radius: 3px;
+    padding: 10px 12px;
+    margin: 12px 0 0;
+    text-align: left;
+}
+
+.summary-details {
+    display: grid;
+    gap: 12px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.summary-details textarea {
+    resize: vertical;
+    font-size: 0.85rem;
+}
+
+#send-estimate.disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+#send-estimate.disabled:hover {
+    transform: none;
+    box-shadow: none;
+    background-color: var(--warm-taupe);
+}
+
+.summary-tools {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.summary-tools button {
+    font-family: 'Montserrat', sans-serif;
+    background: none;
+    border: 1px solid var(--border-light);
+    border-radius: 3px;
+    padding: 8px 4px;
+    font-size: 0.6rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--text-medium);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.2s ease;
+}
+
+.summary-tools button i {
+    font-size: 0.85rem;
+    color: var(--warm-taupe);
+}
+
+.summary-tools button:hover {
+    border-color: var(--warm-taupe);
+    color: var(--deep-brown);
+    background-color: var(--ivory);
+}
+
+.summary-disclaimer {
+    font-size: 0.72rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-top: 18px;
+    line-height: 1.6;
+}
+
+/* ---------- Mobile total bar ---------- */
+.mobile-total-bar {
+    display: none;
+}
+
+/* ---------- Toast ---------- */
+.est-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 32px;
+    transform: translate(-50%, 20px);
+    background-color: var(--deep-brown);
+    color: var(--ivory);
+    padding: 12px 22px;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    box-shadow: 0 8px 30px rgba(61, 46, 36, 0.25);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1200;
+    max-width: calc(100vw - 32px);
+    text-align: center;
+    word-break: break-word;
+}
+
+.est-toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+/* ---------- Services page link ---------- */
+.service-card .btn-estimate {
+    margin-top: 10px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+    .estimator-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .estimator-summary {
+        position: static;
+        max-width: 560px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .summary-card {
+        max-height: none;
+        overflow: visible;
+    }
+
+    .mobile-total-bar {
+        display: flex;
+        position: fixed;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        z-index: 990;
+        align-items: center;
+        gap: 12px;
+        background-color: var(--deep-brown);
+        color: var(--ivory);
+        padding: 12px 18px;
+        border-radius: 50px;
+        box-shadow: 0 8px 30px rgba(61, 46, 36, 0.3);
+        transform: translateY(140%);
+        transition: transform 0.35s ease;
+    }
+
+    .mobile-total-bar:hover {
+        color: var(--ivory);
+    }
+
+    .has-estimate .mobile-total-bar {
+        transform: translateY(0);
+    }
+
+    .has-estimate .mobile-total-bar.summary-visible {
+        transform: translateY(140%);
+    }
+
+    .mtb-label {
+        font-size: 0.6rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        opacity: 0.75;
+    }
+
+    .mtb-total {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.25rem;
+        font-weight: 500;
+        flex: 1;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .mtb-cta {
+        font-size: 0.65rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .est-toast {
+        bottom: 84px;
+    }
+
+    .estimate-page .footer {
+        padding-bottom: 96px;
+    }
+}
+
+@media (max-width: 720px) {
+    .package-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .helper-fields {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .helper-foot {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-helper {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 520px) {
+    .estimator {
+        padding-top: 48px;
+    }
+
+    .est-step-head h2 {
+        font-size: 1.6rem;
+    }
+
+    .est-step-num {
+        width: 34px;
+        height: 34px;
+        font-size: 1.2rem;
+    }
+
+    .est-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 14px 10px;
+    }
+
+    .est-item-controls {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 0;
+    }
+
+    .est-item-controls .stepper {
+        order: 2;
+    }
+
+    .est-category-head {
+        flex-wrap: wrap;
+    }
+
+    .est-category-sub {
+        flex-basis: 100%;
+        margin-left: 38px;
+    }
+
+    .summary-card {
+        padding: 28px 18px 22px;
+    }
+
+    .summary-total {
+        font-size: 2.2rem;
+    }
+
+    .mtb-label {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .est-item.bump .est-item-sub,
+    .summary-lines li {
+        animation: none;
+    }
+}
+
+/* ---------- Print: just the summary, nicely ---------- */
+@media print {
+    .navbar,
+    .nav-overlay,
+    .page-header,
+    .estimator-builder,
+    .mobile-total-bar,
+    .est-toast,
+    .footer,
+    #send-estimate,
+    .summary-tools,
+    .range-viz {
+        display: none !important;
+    }
+
+    body {
+        background: #fff;
+    }
+
+    .estimator {
+        padding: 0;
+    }
+
+    .estimator-layout {
+        display: block;
+    }
+
+    .estimator-summary {
+        position: static;
+    }
+
+    .summary-card {
+        border: none;
+        background: #fff;
+        max-height: none;
+        overflow: visible;
+    }
+
+    .summary-card::before {
+        content: 'Petal & Pearl Flowers \2014  Wedding Flower Estimate';
+        display: block;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.4rem;
+        color: var(--deep-brown);
+        margin-bottom: 20px;
+    }
+
+    .summary-details input,
+    .summary-details textarea {
+        border: none;
+        border-bottom: 1px solid var(--border-light);
+        border-radius: 0;
+        background: #fff;
+    }
+
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
